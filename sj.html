@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorry My Love ❤️</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&family=Dancing+Script:wght@500&family=Lobster&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      height:100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+      font-family:'Poppins', sans-serif;
+    }
+
+    .container{
+      width:90%;
+      max-width:800px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding:40px;
+      border-radius:25px;
+      text-align:center;
+      box-shadow:0 8px 32px rgba(0,0,0,0.2);
+      animation: fadeIn 2s ease;
+    }
+
+    h1{
+      font-size:55px;
+      color:white;
+      font-family:'Pacifico', cursive;
+      margin-bottom:20px;
+      text-shadow:2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .line1{
+      font-family:'Dancing Script', cursive;
+      font-size:35px;
+      color:#fff;
+      margin:15px 0;
+    }
+
+    .line2{
+      font-family:'Lobster', cursive;
+      font-size:30px;
+      color:#fff8f8;
+      margin:15px 0;
+    }
+
+    .line3{
+      font-family:'Poppins', sans-serif;
+      font-size:22px;
+      color:white;
+      margin-top:20px;
+      line-height:1.8;
+    }
+
+    .heart{
+      font-size:70px;
+      animation: heartbeat 1s infinite;
+      margin:20px 0;
+    }
+
+    button{
+      margin-top:30px;
+      padding:15px 35px;
+      border:none;
+      border-radius:30px;
+      background:white;
+      color:#ff4b6e;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:scale(1.1);
+      background:#ff4b6e;
+      color:white;
+    }
+
+    @keyframes heartbeat{
+      0%{ transform:scale(1); }
+      25%{ transform:scale(1.2); }
+      50%{ transform:scale(1); }
+      75%{ transform:scale(1.2); }
+      100%{ transform:scale(1); }
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .floating-hearts span{
+      position:absolute;
+      color:white;
+      font-size:20px;
+      animation: float 8s linear infinite;
+      opacity:0.7;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(100vh) scale(0);
+      }
+      100%{
+        transform:translateY(-10vh) scale(1.5);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="floating-hearts">
+    <span style="left:10%; animation-delay:0s;">❤️</span>
+    <span style="left:25%; animation-delay:2s;">💖</span>
+    <span style="left:50%; animation-delay:4s;">💕</span>
+    <span style="left:75%; animation-delay:1s;">❤️</span>
+    <span style="left:90%; animation-delay:3s;">💘</span>
+  </div>
+
+  <div class="container">
+    <h1>I'm Sorry ❤️</h1>
+
+    <div class="heart">💔</div>
+
+    <p class="line1">
+      My love, I never wanted to hurt you...
+    </p>
+
+    <p class="line2">
+      You are the most beautiful part of my life 💕
+    </p>
+
+    <p class="line3">
+      I know I made mistakes, and I truly regret them.<br>
+      Please forgive me and give me one more chance.<br><br>
+      I promise to love you more, care for you more,<br>
+      and never let sadness come between us again ❤️
+    </p>
+
+    <button onclick="showMessage()">
+      Click If You Still Love Me ❤️
+    </button>
+  </div>
+
+  <script>
+    function showMessage(){
+      alert("Thank you for being in my life ❤️\nI love you forever 💕");
+    }
+  </script>
+
+</body>
+</html>
