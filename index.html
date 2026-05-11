@@ -17,17 +17,57 @@
     }
 
     body{
-      min-height:100vh;
+      font-family:'Poppins',sans-serif;
+      height:100vh;
+      overflow:hidden;
       background: linear-gradient(135deg,#ff9a9e,#fad0c4);
       display:flex;
       justify-content:center;
       align-items:center;
-      overflow:hidden;
-      font-family:'Poppins',sans-serif;
-      padding:20px;
     }
 
-    .container{
+    /* First Screen */
+    .welcome-screen{
+      position:absolute;
+      width:100%;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      z-index:2;
+    }
+
+    .welcome-screen h1{
+      font-size:60px;
+      color:white;
+      font-family:'Pacifico',cursive;
+      margin-bottom:20px;
+      text-shadow:2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .open-btn{
+      padding:18px 40px;
+      border:none;
+      border-radius:40px;
+      font-size:22px;
+      cursor:pointer;
+      background:white;
+      color:#ff4b6e;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .open-btn:hover{
+      transform:scale(1.1);
+      background:#ff4b6e;
+      color:white;
+    }
+
+    /* Main Content */
+    .main-content{
+      display:none;
       width:90%;
       max-width:850px;
       background: rgba(255,255,255,0.15);
@@ -36,37 +76,26 @@
       padding:40px;
       text-align:center;
       box-shadow:0 8px 32px rgba(0,0,0,0.25);
-      animation:fadeIn 2s ease;
+      animation:fadeIn 1.5s ease;
+      z-index:3;
     }
 
-    h1{
+    .main-content h1{
       font-size:55px;
       color:white;
       font-family:'Pacifico',cursive;
       margin-bottom:20px;
-      text-shadow:2px 2px 10px rgba(0,0,0,0.3);
-    }
-
-    .photo{
-      width:220px;
-      height:220px;
-      border-radius:50%;
-      object-fit:cover;
-      border:6px solid white;
-      margin:20px auto;
-      box-shadow:0 0 25px rgba(255,255,255,0.5);
-      animation:glow 2s infinite alternate;
     }
 
     .heart{
-      font-size:65px;
+      font-size:70px;
       animation:heartbeat 1s infinite;
-      margin:15px 0;
+      margin:20px 0;
     }
 
     .line1{
       font-family:'Dancing Script',cursive;
-      font-size:36px;
+      font-size:38px;
       color:white;
       margin-top:10px;
     }
@@ -74,18 +103,18 @@
     .line2{
       font-family:'Lobster',cursive;
       font-size:30px;
-      color:#fff;
+      color:white;
       margin:20px 0;
     }
 
     .line3{
-      font-size:22px;
       color:white;
-      line-height:1.8;
-      margin-top:15px;
+      font-size:22px;
+      line-height:1.9;
+      margin-top:20px;
     }
 
-    button{
+    .love-btn{
       margin-top:30px;
       padding:15px 35px;
       border:none;
@@ -98,12 +127,13 @@
       transition:0.3s;
     }
 
-    button:hover{
+    .love-btn:hover{
       transform:scale(1.1);
       background:#ff4b6e;
       color:white;
     }
 
+    /* Floating Hearts */
     .floating-hearts span{
       position:absolute;
       color:white;
@@ -139,15 +169,6 @@
         transform:translateY(0);
       }
     }
-
-    @keyframes glow{
-      from{
-        box-shadow:0 0 15px white;
-      }
-      to{
-        box-shadow:0 0 35px white;
-      }
-    }
   </style>
 </head>
 
@@ -162,12 +183,19 @@
     <span style="left:90%; animation-delay:3s;">❤️</span>
   </div>
 
-  <div class="container">
+  <!-- First Screen -->
+  <div class="welcome-screen" id="welcome">
+    <h1>For Divya ❤️</h1>
 
-    <h1>Sorry Divya ❤️</h1>
+    <button class="open-btn" onclick="openLetter()">
+      Click Here 💌
+    </button>
+  </div>
 
-    <!-- Put Your Image Name Here -->
-    <img src="divya.jpg" alt="Divya" class="photo">
+  <!-- Main Content -->
+  <div class="main-content" id="mainContent">
+
+    <h1>I'm Sorry Divya ❤️</h1>
 
     <div class="heart">💔</div>
 
@@ -180,27 +208,46 @@
     </p>
 
     <p class="line3">
-      I know I made mistakes and I truly regret them.<br>
-      Please forgive me and give me one more chance.<br><br>
+      I know I made mistakes and I truly regret them.<br><br>
 
-      You mean everything to me, Divya 💕<br>
-      Your smile is my happiness and your love is my strength.<br><br>
+      Every moment without talking to you feels empty.<br>
+      I miss your smile, your voice, and your presence 💕<br><br>
+
+      You are not just someone special to me,<br>
+      you are my peace, my happiness, and my favorite person ❤️<br><br>
+
+      Please forgive me for the pain I caused.<br>
+      I never want distance or sadness between us again 🥺<br><br>
 
       I promise to love you more,<br>
+      respect you more,<br>
       care for you more,<br>
-      and never let sadness come between us again ❤️
+      and never take your love for granted 💖<br><br>
+
+      No matter what happens,<br>
+      my heart will always choose you, Divya ❤️<br><br>
+
+      I am truly sorry...<br>
+      and I hope you can give me one more chance 💌
     </p>
 
-    <button onclick="showLove()">
-      Click If You Still Love Me ❤️
+    <button class="love-btn" onclick="showLove()">
+      Click If You Forgive Me ❤️
     </button>
 
   </div>
 
   <script>
-    function showLove(){
-      alert("Divya ❤️\nThank you for being in my life.\nI love you forever 💕");
+
+    function openLetter(){
+      document.getElementById("welcome").style.display = "none";
+      document.getElementById("mainContent").style.display = "block";
     }
+
+    function showLove(){
+      alert("Thank you Divya ❤️\nYou mean everything to me 💕");
+    }
+
   </script>
 
 </body>
